@@ -2,30 +2,25 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class PayRefactored {
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         System.out.printf("%s has earned $%.2f.", getName(), getPay());
     }
     public static String getName() {
-        Scanner input = new Scanner(System.in);
         System.out.print("Enter your name: ");
-        String name = input.nextLine();
-        return name;
+        return input.nextLine();
     }
     public static double getHours() {
-        Scanner input = new Scanner(System.in);
         System.out.print("Enter how many hours worked: ");
-        double hours = input.nextDouble();
-        return hours;
+        return input.nextDouble();
     }
     public static double getRate() {
-        Scanner input = new Scanner(System.in);
         System.out.print("Enter your pay rate: ");
-        double rate = input.nextDouble();
-        return rate;
+        return input.nextDouble();
     }
     public static double getPay() {
-        double pay = 0;
+        double pay;
         double hours = getHours();
         double rate = getRate();
         if (hours > 40) {
